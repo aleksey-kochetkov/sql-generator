@@ -1,6 +1,7 @@
 package e.sqlgenerator.sql;
 
 import java.util.concurrent.Executor;
+import java.sql.Struct;
 
 public class Connection implements java.sql.Connection {
     private int networkTimeout;
@@ -27,6 +28,11 @@ public class Connection implements java.sql.Connection {
 
     @Override
     public void setSchema(String schema) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Struct createStruct(String typeName, Object[] attributes) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
