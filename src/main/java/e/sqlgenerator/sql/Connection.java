@@ -1,10 +1,32 @@
 package e.sqlgenerator.sql;
 
+import java.util.Properties;
 import java.util.concurrent.Executor;
+import java.sql.Array;
 import java.sql.Struct;
 
 public class Connection implements java.sql.Connection {
     private int networkTimeout;
+
+    @Override
+    public Properties getClientInfo() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getClientInfo(String name) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setClientInfo(Properties properties) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setClientInfo(String name, String value) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     @Override
     public int getNetworkTimeout() {
@@ -14,6 +36,11 @@ public class Connection implements java.sql.Connection {
     @Override
     public void setNetworkTimeout(Executor executor, int networkTimeout) {
         this.networkTimeout = networkTimeout;
+    }
+
+    @Override
+    public boolean isValid(int timeout) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -28,6 +55,11 @@ public class Connection implements java.sql.Connection {
 
     @Override
     public void setSchema(String schema) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Array createArrayOf(String typeName, Object[] elements) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
