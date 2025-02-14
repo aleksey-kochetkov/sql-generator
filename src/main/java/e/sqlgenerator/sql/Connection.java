@@ -4,6 +4,7 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 import java.sql.Array;
 import java.sql.Struct;
+import java.sql.SQLXML;
 
 public class Connection implements java.sql.Connection {
     private int networkTimeout;
@@ -65,6 +66,11 @@ public class Connection implements java.sql.Connection {
 
     @Override
     public Struct createStruct(String typeName, Object[] attributes) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public SQLXML createSQLXML() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
