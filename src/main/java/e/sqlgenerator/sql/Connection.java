@@ -2,6 +2,8 @@ package e.sqlgenerator.sql;
 
 import java.util.Properties;
 import java.util.concurrent.Executor;
+import java.sql.Blob;
+import java.sql.NClob;
 import java.sql.Array;
 import java.sql.Struct;
 import java.sql.SQLXML;
@@ -56,6 +58,16 @@ public class Connection implements java.sql.Connection {
 
     @Override
     public void setSchema(String schema) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Blob createBlob() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public NClob createNClob() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
