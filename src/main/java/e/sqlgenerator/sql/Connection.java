@@ -3,6 +3,7 @@ package e.sqlgenerator.sql;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 import java.sql.Blob;
+import java.sql.Clob;
 import java.sql.NClob;
 import java.sql.Array;
 import java.sql.Struct;
@@ -63,6 +64,11 @@ public class Connection implements java.sql.Connection {
 
     @Override
     public Blob createBlob() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Clob createClob() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
