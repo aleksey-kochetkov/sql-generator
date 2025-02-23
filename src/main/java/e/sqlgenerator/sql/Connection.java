@@ -93,6 +93,12 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public java.sql.Statement createStatement(int resultSetType,
+                    int resultSetConcurrency, int resultSetHoldability) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public java.sql.PreparedStatement prepareStatement(String sql, String[] columnNames) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
