@@ -1,6 +1,7 @@
 package e.sqlgenerator.sql;
 
 import java.util.Properties;
+import java.util.Map;
 import java.util.concurrent.Executor;
 import java.sql.Blob;
 import java.sql.Clob;
@@ -8,6 +9,7 @@ import java.sql.NClob;
 import java.sql.Array;
 import java.sql.Struct;
 import java.sql.SQLXML;
+import java.sql.Savepoint;
 
 public class Connection implements java.sql.Connection {
     private int networkTimeout;
@@ -89,6 +91,46 @@ public class Connection implements java.sql.Connection {
 
     @Override
     public SQLXML createSQLXML() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Map<String, Class<?>> getTypeMap() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setTypeMap(Map<String, Class<?>> map) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public int getHoldability() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setHoldability(int holdability) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Savepoint setSavepoint() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Savepoint setSavepoint(String name) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void releaseSavepoint(Savepoint savepoint) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void rollback(Savepoint savepoint) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
