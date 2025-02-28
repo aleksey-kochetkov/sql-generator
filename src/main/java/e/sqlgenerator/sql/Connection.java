@@ -96,6 +96,11 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public java.sql.DatabaseMetaData getMetaData() {
+        return databaseMetaData;
+    }
+
+    @Override
     public Map<String, Class<?>> getTypeMap() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
