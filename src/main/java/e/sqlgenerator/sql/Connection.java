@@ -10,6 +10,7 @@ import java.sql.Array;
 import java.sql.Struct;
 import java.sql.SQLXML;
 import java.sql.Savepoint;
+import java.sql.SQLWarning;
 
 public class Connection implements java.sql.Connection {
     private int networkTimeout;
@@ -105,6 +106,36 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public boolean isReadOnly() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setReadOnly(boolean readOnly) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getCatalog() {
+        return null;
+    }
+
+    @Override
+    public void setCatalog(String catalog) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public int getTransactionIsolation() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setTransactionIsolation(int level) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public int getHoldability() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -184,6 +215,16 @@ public class Connection implements java.sql.Connection {
     @Override
     public java.sql.CallableStatement prepareCall(
                String sql, int resultSetType, int resultSetConcurrency) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public SQLWarning getWarnings() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void clearWarnings() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
