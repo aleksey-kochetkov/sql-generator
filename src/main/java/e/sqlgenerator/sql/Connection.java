@@ -14,6 +14,9 @@ import java.sql.SQLWarning;
 
 public class Connection implements java.sql.Connection {
     private int networkTimeout;
+    private final java.sql.DatabaseMetaData
+                           databaseMetaData = new DatabaseMetaData(this);
+    private boolean autoCommit = true;
 
     @Override
     public Properties getClientInfo() {
@@ -53,6 +56,15 @@ public class Connection implements java.sql.Connection {
     @Override
     public void abort(Executor executor) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void close() {
+    }
+
+    @Override
+    public boolean isClosed() {
+        return true;
     }
 
     @Override
@@ -96,17 +108,22 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
-    public java.sql.DatabaseMetaData getMetaData() {
-        return databaseMetaData;
-    }
-
-    @Override
     public Map<String, Class<?>> getTypeMap() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void setTypeMap(Map<String, Class<?>> map) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public java.sql.DatabaseMetaData getMetaData() {
+        return databaseMetaData;
+    }
+
+    @Override
+    public String nativeSQL(String sql) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -141,6 +158,16 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public boolean getAutoCommit() {
+        return autoCommit;
+    }
+
+    @Override
+    public void setAutoCommit(boolean autoCommit) {
+        this.autoCommit = autoCommit;
+    }
+
+    @Override
     public int getHoldability() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -171,6 +198,15 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public void rollback() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void commit() {
+    }
+
+    @Override
     public java.sql.Statement createStatement(int resultSetType,
                     int resultSetConcurrency, int resultSetHoldability) {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -180,6 +216,11 @@ public class Connection implements java.sql.Connection {
     public java.sql.Statement createStatement(
                            int resultSetType, int resultSetConcurrency) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public java.sql.Statement createStatement() {
+        return new Statement(statements);
     }
 
     @Override
@@ -211,6 +252,11 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public java.sql.PreparedStatement prepareStatement(String sql) {
+        return new PreparedStatement(statements, sql);
+    }
+
+    @Override
     public java.sql.CallableStatement prepareCall(
                String sql, int resultSetType, int resultSetConcurrency,
                                               int resultSetHoldability) {
@@ -224,12 +270,27 @@ public class Connection implements java.sql.Connection {
     }
 
     @Override
+    public java.sql.CallableStatement prepareCall(String sql) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public SQLWarning getWarnings() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void clearWarnings() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean isWrapperFor(Class<?> iface) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public <T> T unwrap(Class<T> iface) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
