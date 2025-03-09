@@ -10,6 +10,6 @@ public class Config {
     @Bean
     public DataSource dataSource() {
         return DataSourceBuilder.create()
-                            .type(e.sqlgenerator.sql.DataSource).build();
+                      .type(e.sqlgenerator.sql.DataSource.class).build();
     }
 }

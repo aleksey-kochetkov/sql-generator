@@ -1,6 +1,7 @@
 package e.sqlgenerator.sql;
 
 import java.io.PrintWriter;
+import java.util.logging.Logger;
 
 public class DataSource implements javax.sql.DataSource {
     private int loginTimeout;
@@ -28,8 +29,28 @@ public class DataSource implements javax.sql.DataSource {
     }
 
     @Override
+    public Logger getParentLogger() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public java.sql.Connection getConnection() {
+        return connection;
+    }
+
+    @Override
     public java.sql.Connection getConnection(
                                        String username, String password) {
         return connection;
+    }
+
+    @Override
+    public <T> T unwrap(Class<T> iface) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean isWrapperFor(Class<?> iface) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
