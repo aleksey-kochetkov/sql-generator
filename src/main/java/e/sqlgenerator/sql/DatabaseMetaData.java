@@ -33,6 +33,11 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     @Override
+    public boolean supportsNamedParameters() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public boolean supportsMultipleOpenResults() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
