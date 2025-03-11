@@ -88,6 +88,21 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     @Override
+    public boolean ownInsertsAreVisible(int type) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean ownUpdatesAreVisible(int type) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean ownDeletesAreVisible(int type) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public boolean othersInsertsAreVisible(int type) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
