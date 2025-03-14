@@ -1,5 +1,7 @@
 package e.sqlgenerator.sql;
 
+import java.sql.RowIdLifetime;
+
 public class DatabaseMetaData implements java.sql.DatabaseMetaData {
 
     @Override
