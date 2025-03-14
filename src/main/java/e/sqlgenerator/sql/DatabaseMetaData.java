@@ -68,6 +68,11 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     @Override
+    public boolean supportsResultSetConcurrency(int type, int concurrency) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public boolean supportsBatchUpdates() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
