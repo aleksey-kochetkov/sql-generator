@@ -180,6 +180,11 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     @Override
+    public java.sql.ResultSet getTableTypes() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public java.sql.ResultSet getSuperTables(String catalog, String schemaPattern, String tableNamePattern) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
