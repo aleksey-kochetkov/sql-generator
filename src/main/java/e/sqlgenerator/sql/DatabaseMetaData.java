@@ -170,6 +170,11 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     @Override
+    public java.sql.ResultSet getCatalogs() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
     public java.sql.ResultSet getUDTs(String catalog, String schemaPattern, String typeNamePattern, int[] types) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
