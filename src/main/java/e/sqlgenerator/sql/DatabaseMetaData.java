@@ -1,8 +1,14 @@
 package e.sqlgenerator.sql;
 
+import java.sql.Connection;
 import java.sql.RowIdLifetime;
 
 public class DatabaseMetaData implements java.sql.DatabaseMetaData {
+    private final Connection connection;
+
+    public DatabaseMetaData(Connection connection) {
+        this.connection = connection;
+    }
 
     @Override
     public java.sql.ResultSet getClientInfoProperties() {
@@ -10,8 +16,8 @@ public class DatabaseMetaData implements java.sql.DatabaseMetaData {
     }
 
     @Override
-    public java.sql.Connection getConnection() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Connection getConnection() {
+        return connection;
     }
 
     @Override
