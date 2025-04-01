@@ -10,5 +10,6 @@ public class CriteriaRepository {
     private EntityManager em;
 
     public void run() {
+        Builder builder;
     }
 }

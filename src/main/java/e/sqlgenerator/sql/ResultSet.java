@@ -1,885 +1,969 @@
 package e.sqlgenerator.sql;
 
-import java.sql.Connection;
-import java.sql.RowIdLifetime;
+import java.math.BigDecimal;
+import java.io.InputStream;
+import java.io.Reader;
+import java.util.Calendar;
+import java.util.Map;
+import java.net.URL;
+import java.sql.Timestamp;
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Blob;
+import java.sql.Clob;
+import java.sql.NClob;
+import java.sql.Array;
+import java.sql.SQLXML;
+import java.sql.Ref;
+import java.sql.RowId;
+import java.sql.Statement;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLWarning;
 
-public class DatabaseMetaData implements java.sql.DatabaseMetaData {
-    private final Connection connection;
-
-    public DatabaseMetaData(Connection connection) {
-        this.connection = connection;
-    }
-
-    @Override
-    public java.sql.ResultSet getClientInfoProperties() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Connection getConnection() {
-        return connection;
-    }
-
-    @Override
-    public boolean generatedKeyAlwaysReturned() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+public class ResultSet implements java.sql.ResultSet {
 
     @Override
-    public RowIdLifetime getRowIdLifetime() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean autoCommitFailureClosesAllResultSets() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean supportsStoredFunctionsUsingCallSyntax() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean supportsStatementPooling() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean supportsSavepoints() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean supportsNamedParameters() {
+    public boolean next() {
         return false;
     }
 
     @Override
-    public boolean supportsMultipleOpenResults() {
+    public void close() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsGetGeneratedKeys() {
-        return false;
+    public boolean wasNull() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getString(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean getBoolean(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public byte getByte(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public short getShort(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public int getInt(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public long getLong(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public float getFloat(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public double getDouble(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public BigDecimal getBigDecimal(int columnIndex, int scale) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public byte[] getBytes(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Date getDate(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Time getTime(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Timestamp getTimestamp(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public InputStream getAsciiStream(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsResultSetHoldability(int holdability) {
+    public InputStream getUnicodeStream(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getResultSetHoldability() {
+    public InputStream getBinaryStream(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsResultSetConcurrency(int type, int concurrency) {
+    public String getString(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsResultSetType(int type) {
-        if (type == java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE) {
-            return true;
-        }
-        throw new UnsupportedOperationException(String.format("type:%d", type));
+    public boolean getBoolean(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public byte getByte(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public short getShort(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public int getInt(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public long getLong(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public float getFloat(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public double getDouble(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public BigDecimal getBigDecimal(String columnLabel, int scale) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public byte[] getBytes(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Date getDate(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsBatchUpdates() {
-        return true;
+    public Time getTime(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean insertsAreDetected(int type) {
+    public Timestamp getTimestamp(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean updatesAreDetected(int type) {
+    public InputStream getAsciiStream(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean deletesAreDetected(int type) {
+    public InputStream getUnicodeStream(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean ownInsertsAreVisible(int type) {
+    public InputStream getBinaryStream(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean ownUpdatesAreVisible(int type) {
+    public SQLWarning getWarnings() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean ownDeletesAreVisible(int type) {
+    public void clearWarnings() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean othersInsertsAreVisible(int type) {
+    public String getCursorName() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean othersUpdatesAreVisible(int type) {
+    public ResultSetMetaData getMetaData() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean othersDeletesAreVisible(int type) {
+    public Object getObject(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getDatabaseProductName() {
-        return "Apache Derby";
+    public Object getObject(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getDatabaseMajorVersion() {
-        return 10;
+    public int findColumn(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getDatabaseMinorVersion() {
-        return 16;
+    public Reader getCharacterStream(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getJDBCMajorVersion() {
-        return 4;
+    public Reader getCharacterStream(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getJDBCMinorVersion() {
-        return 2;
+    public BigDecimal getBigDecimal(int columnIndex) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getSQLStateType() {
-        return sqlStateSQL;
+    public BigDecimal getBigDecimal(String columnLabel) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean locatorsUpdateCopy() {
+    public boolean isBeforeFirst() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getSchemas() {
+    public boolean isAfterLast() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getSchemas(String catalog, String schemaPattern) {
+    public boolean isFirst() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getCatalogs() {
+    public boolean isLast() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getUDTs(String catalog, String schemaPattern, String typeNamePattern, int[] types) {
+    public void beforeFirst() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getSuperTypes(String catalog, String schemaPattern, String typeNamePattern) {
+    public void afterLast() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getTableTypes() {
+    public boolean first() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getSuperTables(String catalog, String schemaPattern, String tableNamePattern) {
+    public boolean last() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getTables(String catalog, String schemaPattern, String tableNamePattern, String[] types) {
+    public int getRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getFunctions(String catalog, String schemaPattern, String functionNamePattern) {
+    public boolean absolute(int row) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getColumns(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
+    public boolean relative(int rows) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getPseudoColumns(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
+    public boolean previous() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getFunctionColumns(String catalog, String schemaPattern, String functionNamePattern, String columnNamePattern) {
+    public void setFetchDirection(int direction) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getProcedureColumns(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern) {
+    public int getFetchDirection() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getVersionColumns(String catalog, String schema, String table) {
+    public void setFetchSize(int rows) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getBestRowIdentifier(String catalog, String schema, String table, int scope, boolean nullable) {
+    public int getFetchSize() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getIndexInfo(String catalog, String schema, String table, boolean unique, boolean approximate) {
+    public int getType() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getCrossReference(String parentCatalog, String parentSchema, String parentTable, String foreignCatalog, String foreignSchema, String foreignTable) {
+    public int getConcurrency() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getPrimaryKeys(String catalog, String schema, String table) {
+    public boolean rowUpdated() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getExportedKeys(String catalog, String schema, String table) {
+    public boolean rowInserted() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getImportedKeys(String catalog, String schema, String table) {
+    public boolean rowDeleted() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getTablePrivileges(String catalog, String schemaPattern, String tableNamePattern) {
+    public void updateNull(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getColumnPrivileges(String catalog, String schema, String table, String columnNamePattern) {
+    public void updateBoolean(int columnIndex, boolean x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getTypeInfo() {
+    public void updateByte(int columnIndex, byte x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getAttributes(String catalog, String schemaPattern, String typeNamePattern, String attributeNamePattern) {
+    public void updateShort(int columnIndex, short x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean allProceduresAreCallable() {
+    public void updateInt(int columnIndex, int x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean allTablesAreSelectable() {
+    public void updateLong(int columnIndex, long x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getURL() {
+    public void updateFloat(int columnIndex, float x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getUserName() {
+    public void updateDouble(int columnIndex, double x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean isReadOnly() {
+    public void updateBigDecimal(int columnIndex, BigDecimal x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean nullsAreSortedHigh() {
+    public void updateString(int columnIndex, String x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean nullsAreSortedLow() {
+    public void updateBytes(int columnIndex, byte[] x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean nullsAreSortedAtStart() {
+    public void updateDate(int columnIndex, Date x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean nullsAreSortedAtEnd() {
+    public void updateTime(int columnIndex, Time x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getDatabaseProductVersion() {
+    public void updateTimestamp(int columnIndex, Timestamp x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getDriverName() {
+    public void updateAsciiStream(int columnIndex, InputStream x, int length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getDriverVersion() {
+    public void updateBinaryStream(int columnIndex, InputStream x, int length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getDriverMajorVersion() {
+    public void updateCharacterStream(int columnIndex, Reader x, int length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getDriverMinorVersion() {
+    public void updateObject(int columnIndex, Object x, int scaleOrLength) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean usesLocalFiles() {
+    public void updateObject(int columnIndex, Object x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean usesLocalFilePerTable() {
+    public void updateNull(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsMixedCaseIdentifiers() {
+    public void updateBoolean(String columnLabel, boolean x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean storesUpperCaseIdentifiers() {
-        return true;
+    public void updateByte(String columnLabel, byte x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean storesLowerCaseIdentifiers() {
-        return false;
+    public void updateShort(String columnLabel, short x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean storesMixedCaseIdentifiers() {
-        return false;
+    public void updateInt(String columnLabel, int x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsMixedCaseQuotedIdentifiers() {
+    public void updateLong(String columnLabel, long x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean storesUpperCaseQuotedIdentifiers() {
-        return false;
+    public void updateFloat(String columnLabel, float x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean storesLowerCaseQuotedIdentifiers() {
-        return false;
+    public void updateDouble(String columnLabel, double x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean storesMixedCaseQuotedIdentifiers() {
-        return true;
+    public void updateBigDecimal(String columnLabel, BigDecimal x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getIdentifierQuoteString() {
+    public void updateString(String columnLabel, String x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getSQLKeywords() {
-        return "ALIAS,BIGINT,BOOLEAN,CALL,CLASS,COPY,DB2J_DEBUG,EXECUTE,EXPLAIN,FILE,FILTER,GETCURRENTCONNECTION,INDEX,INSTANCEOF,METHOD,NEW,OFF,PROPERTIES,RECOMPILE,RENAME,RUNTIMESTATISTICS,STATEMENT,STATISTICS,TIMING,WAIT";
+    public void updateBytes(String columnLabel, byte[] x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getNumericFunctions() {
+    public void updateDate(String columnLabel, Date x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getStringFunctions() {
+    public void updateTime(String columnLabel, Time x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getSystemFunctions() {
+    public void updateTimestamp(String columnLabel, Timestamp x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getTimeDateFunctions() {
+    public void updateAsciiStream(String columnLabel, InputStream x, int length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getSearchStringEscape() {
+    public void updateBinaryStream(String columnLabel, InputStream x, int length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getExtraNameCharacters() {
+    public void updateCharacterStream(String columnLabel, Reader reader, int length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsAlterTableWithAddColumn() {
+    public void updateObject(String columnLabel, Object x, int scaleOrLength) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsAlterTableWithDropColumn() {
+    public void updateObject(String columnLabel, Object x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsColumnAliasing() {
+    public void insertRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean nullPlusNonNullIsNull() {
+    public void updateRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsConvert() {
+    public void deleteRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsConvert(int fromType, int toType) {
+    public void refreshRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsTableCorrelationNames() {
+    public void cancelRowUpdates() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsDifferentTableCorrelationNames() {
+    public void moveToInsertRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsExpressionsInOrderBy() {
+    public void moveToCurrentRow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsOrderByUnrelated() {
+    public Statement getStatement() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsGroupBy() {
+    public Object getObject(int columnIndex, Map<String, Class<?>> map) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsGroupByUnrelated() {
+    public Ref getRef(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsGroupByBeyondSelect() {
+    public Blob getBlob(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsLikeEscapeClause() {
+    public Clob getClob(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsMultipleResultSets() {
+    public Array getArray(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsMultipleTransactions() {
+    public Object getObject(String columnLabel, Map<String, Class<?>> map) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsNonNullableColumns() {
+    public Ref getRef(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsMinimumSQLGrammar() {
+    public Blob getBlob(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCoreSQLGrammar() {
+    public Clob getClob(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsExtendedSQLGrammar() {
+    public Array getArray(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsANSI92EntryLevelSQL() {
+    public Date getDate(int columnIndex, Calendar cal) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsANSI92IntermediateSQL() {
+    public Date getDate(String columnLabel, Calendar cal) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsANSI92FullSQL() {
+    public Time getTime(int columnIndex, Calendar cal) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsIntegrityEnhancementFacility() {
+    public Time getTime(String columnLabel, Calendar cal) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsOuterJoins() {
+    public Timestamp getTimestamp(int columnIndex, Calendar cal) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsFullOuterJoins() {
+    public Timestamp getTimestamp(String columnLabel, Calendar cal) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsLimitedOuterJoins() {
+    public URL getURL(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getSchemaTerm() {
+    public URL getURL(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getProcedureTerm() {
+    public void updateRef(int columnIndex, Ref x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getCatalogTerm() {
+    public void updateRef(String columnLabel, Ref x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean isCatalogAtStart() {
-        return false;
+    public void updateBlob(int columnIndex, Blob x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public String getCatalogSeparator() {
-        return "";
+    public void updateBlob(String columnLabel, Blob x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSchemasInDataManipulation() {
+    public void updateClob(int columnIndex, Clob x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSchemasInProcedureCalls() {
+    public void updateClob(String columnLabel, Clob x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSchemasInTableDefinitions() {
-        return true;
+    public void updateArray(int columnIndex, Array x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSchemasInIndexDefinitions() {
+    public void updateArray(String columnLabel, Array x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSchemasInPrivilegeDefinitions() {
+    public RowId getRowId(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCatalogsInDataManipulation() {
+    public RowId getRowId(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCatalogsInProcedureCalls() {
+    public void updateRowId(int columnIndex, RowId x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCatalogsInTableDefinitions() {
-        return false;
+    public void updateRowId(String columnLabel, RowId x) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCatalogsInIndexDefinitions() {
+    public int getHoldability() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCatalogsInPrivilegeDefinitions() {
+    public boolean isClosed() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsPositionedDelete() {
+    public void updateNString(int columnIndex, String nString) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsPositionedUpdate() {
+    public void updateNString(String columnLabel, String nString) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSelectForUpdate() {
+    public void updateNClob(int columnIndex, NClob nClob) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsStoredProcedures() {
+    public void updateNClob(String columnLabel, NClob nClob) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSubqueriesInComparisons() {
+    public NClob getNClob(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSubqueriesInExists() {
+    public NClob getNClob(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSubqueriesInIns() {
+    public SQLXML getSQLXML(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsSubqueriesInQuantifieds() {
+    public SQLXML getSQLXML(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsCorrelatedSubqueries() {
+    public void updateSQLXML(int columnIndex, SQLXML xmlObject) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsUnion() {
+    public void updateSQLXML(String columnLabel, SQLXML xmlObject) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsUnionAll() {
+    public String getNString(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsOpenCursorsAcrossCommit() {
+    public String getNString(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsOpenCursorsAcrossRollback() {
+    public Reader getNCharacterStream(int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsOpenStatementsAcrossCommit() {
+    public Reader getNCharacterStream(String columnLabel) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsOpenStatementsAcrossRollback() {
+    public void updateNCharacterStream(int columnIndex, Reader x, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxBinaryLiteralLength() {
+    public void updateNCharacterStream(String columnLabel, Reader reader, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxCharLiteralLength() {
+    public void updateAsciiStream(int columnIndex, InputStream x, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxColumnNameLength() {
+    public void updateBinaryStream(int columnIndex, InputStream x, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxColumnsInGroupBy() {
+    public void updateCharacterStream(int columnIndex, Reader x, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxColumnsInIndex() {
+    public void updateAsciiStream(String columnLabel, InputStream x, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxColumnsInOrderBy() {
+    public void updateBinaryStream(String columnLabel, InputStream x, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxColumnsInSelect() {
+    public void updateCharacterStream(String columnLabel, Reader reader, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxColumnsInTable() {
+    public void updateBlob(int columnIndex, InputStream inputStream, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxConnections() {
+    public void updateBlob(String columnLabel, InputStream inputStream, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxCursorNameLength() {
+    public void updateClob(int columnIndex, Reader reader, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxIndexLength() {
+    public void updateClob(String columnLabel, Reader reader, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxSchemaNameLength() {
+    public void updateNClob(int columnIndex, Reader reader, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxProcedureNameLength() {
+    public void updateNClob(String columnLabel, Reader reader, long length) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxCatalogNameLength() {
+    public void updateNCharacterStream(int columnIndex, Reader x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxRowSize() {
+    public void updateNCharacterStream(String columnLabel, Reader reader) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean doesMaxRowSizeIncludeBlobs() {
+    public void updateAsciiStream(int columnIndex, InputStream x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxStatementLength() {
+    public void updateBinaryStream(int columnIndex, InputStream x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxStatements() {
+    public void updateCharacterStream(int columnIndex, Reader x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxTableNameLength() {
+    public void updateAsciiStream(String columnLabel, InputStream x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxTablesInSelect() {
+    public void updateBinaryStream(String columnLabel, InputStream x) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getMaxUserNameLength() {
+    public void updateCharacterStream(String columnLabel, Reader reader) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public int getDefaultTransactionIsolation() {
+    public void updateBlob(int columnIndex, InputStream inputStream) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsTransactions() {
+    public void updateBlob(String columnLabel, InputStream inputStream) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsTransactionIsolationLevel(int level) {
+    public void updateClob(int columnIndex, Reader reader) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsDataDefinitionAndDataManipulationTransactions() {
+    public void updateClob(String columnLabel, Reader reader) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean supportsDataManipulationTransactionsOnly() {
+    public void updateNClob(int columnIndex, Reader reader) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean dataDefinitionCausesTransactionCommit() {
-        return false;
+    public void updateNClob(String columnLabel, Reader reader) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean dataDefinitionIgnoredInTransactions() {
-        return false;
+    public <T> T getObject(int columnIndex, Class<T> type) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public java.sql.ResultSet getProcedures(String catalog, String schemaPattern, String procedureNamePattern) {
+    public <T> T getObject(String columnLabel, Class<T> type) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

@@ -1,12 +1,19 @@
 package e.sqlgenerator.sql;
 
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class DataSource implements javax.sql.DataSource {
+    private static final List<String> statements = new ArrayList<>();
     private int loginTimeout;
     private PrintWriter logWriter;
-    private Connection connection = new Connection();
+    private Connection connection = new Connection(statements);
+
+    public static List<String> getStatements() {
+        return statements;
+    }
 
     @Override
     public int getLoginTimeout() {
