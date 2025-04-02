@@ -1,6 +1,7 @@
 package e.sqlgenerator.sql;
 
 import java.util.Properties;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.sql.Blob;
@@ -13,10 +14,15 @@ import java.sql.Savepoint;
 import java.sql.SQLWarning;
 
 public class Connection implements java.sql.Connection {
+    private final List<String> statements;
     private int networkTimeout;
     private final java.sql.DatabaseMetaData
                            databaseMetaData = new DatabaseMetaData(this);
     private boolean autoCommit = true;
+
+    public Connection(List<String> statements) {
+        this.statements = statements;
+    }
 
     @Override
     public Properties getClientInfo() {

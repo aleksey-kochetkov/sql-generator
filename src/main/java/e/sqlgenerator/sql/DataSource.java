@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 public class DataSource implements javax.sql.DataSource {
     private int loginTimeout;
     private PrintWriter logWriter;
-    private Connection connection = new Connection();
+    private Connection connection = new Connection(statements);
 
     @Override
     public int getLoginTimeout() {
