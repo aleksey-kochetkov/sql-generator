@@ -1,6 +1,7 @@
 package e.sqlgenerator.repository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,6 +11,6 @@ public class CriteriaRepository {
     private EntityManager em;
 
     public void run() {
-        Builder builder;
+        CriteriaBuilder builder = em.getCriteriaBuilder();
     }
 }
