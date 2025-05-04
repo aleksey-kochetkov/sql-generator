@@ -14,6 +14,6 @@ public class CriteriaRepository {
 
     public void run() {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<Item> criteria;
+        CriteriaQuery<Item> criteria = builder.createQuery(Item.class);
     }
 }
