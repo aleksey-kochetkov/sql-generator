@@ -18,6 +18,7 @@ public class CriteriaRepository {
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<Item> criteria = builder.createQuery(Item.class);
         Root<Item> item = criteria.from(Item.class);
+        select();
         TypedQuery<Item> query = em.createQuery(criteria);
         query.getResultList();
     }
