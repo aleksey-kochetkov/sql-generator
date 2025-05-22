@@ -7,7 +7,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import e.sqlgenerator.model.Item;
+import e.sqlgenerator.model.Trade;
 
 @Repository
 public class CriteriaRepository {
@@ -16,9 +16,10 @@ public class CriteriaRepository {
 
     public void run() {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<Item> criteria = builder.createQuery(Item.class);
-        Root<Item> item = criteria.from(Item.class);
-        TypedQuery<Item> query = em.createQuery(criteria);
+        CriteriaQuery<Trade> criteria = builder.createQuery(Trade.class);
+        Root<Trade> trade = criteria.from(Trade.class);
+        criteria.select(trade);
+        TypedQuery<Trade> query = em.createQuery(criteria);
         query.getResultList();
     }
 }
