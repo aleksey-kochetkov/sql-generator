@@ -18,7 +18,7 @@ public class CriteriaRepository {
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<Trade> criteria = builder.createQuery(Trade.class);
         Root<Trade> trade = criteria.from(Trade.class);
-        criteria.select(trade);
+        criteria.select(trade.get("buy"));
         TypedQuery<Trade> query = em.createQuery(criteria);
         query.getResultList();
     }
