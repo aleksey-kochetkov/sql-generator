@@ -1,5 +1,6 @@
 package e.sqlgenerator.repository;
 
+import java.math.BigDecimal;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -16,10 +17,10 @@ public class CriteriaRepository {
 
     public void run() {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<Trade> criteria = builder.createQuery(Trade.class);
+        CriteriaQuery<BigDecimal> criteria = builder.createQuery(BigDecimal.class);
         Root<Trade> trade = criteria.from(Trade.class);
-        criteria.select(trade);
-        TypedQuery<Trade> query = em.createQuery(criteria);
+        criteria.select(trade.get("buy"));
+        TypedQuery<BigDecimal> query = em.createQuery(criteria);
         query.getResultList();
     }
 }
