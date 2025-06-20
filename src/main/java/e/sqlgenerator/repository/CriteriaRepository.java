@@ -19,7 +19,7 @@ public class CriteriaRepository {
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<BigDecimal> criteria = builder.createQuery(BigDecimal.class);
         Root<Trade> trade = criteria.from(Trade.class);
-        criteria.select(trade.get("buy"));
+        criteria.multiselect(trade.get("buy"));
         criteria.groupBy(trade.get("buy"));
         criteria.orderBy(builder.desc(trade.get("buy")));
         TypedQuery<BigDecimal> query = em.createQuery(criteria);
