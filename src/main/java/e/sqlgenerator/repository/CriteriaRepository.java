@@ -3,6 +3,7 @@ package e.sqlgenerator.repository;
 import java.math.BigDecimal;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import jakarta.persistence.Tuple;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -17,12 +18,12 @@ public class CriteriaRepository {
 
     public void run() {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<BigDecimal> criteria = builder.createQuery(BigDecimal.class);
+        CriteriaQuery<Tuple> criteria = builder.createQuery(Tuple.class);
         Root<Trade> trade = criteria.from(Trade.class);
-        criteria.multiselect(trade.get("buy"));
+        criteria.multiselect(trade.get("buy"), trade.get("buyQuantity"));
         criteria.groupBy(trade.get("buy"));
         criteria.orderBy(builder.desc(trade.get("buy")));
-        TypedQuery<BigDecimal> query = em.createQuery(criteria);
+        TypedQuery<Tuple> query = em.createQuery(criteria);
         query.getResultList();
     }
 }
